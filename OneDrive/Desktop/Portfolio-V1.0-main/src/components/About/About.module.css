@@ -1,0 +1,91 @@
+@import "../../vars.css";
+
+.container{
+    position: relative;
+    padding: 73px 0 0 0;
+    margin-top: 60px;
+    z-index: 1;
+    margin-left: 0;
+    margin-right: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--color-text);
+}
+
+.title{
+    color: var(--color-text);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.aboutImage {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutText {
+    color: var(--color-text);
+    font-size: 18px;
+    font-family: var(--font-roboto);
+    text-align: justify;
+    max-width: 600px;
+    line-height: 1.7;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutText em {
+    font-style: italic;
+    margin-top: 15px;
+    display: block;
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        padding: 20px 0 0 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .content {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+    }
+    .aboutImage {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+    .aboutText {
+        font-size: 14px;
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}

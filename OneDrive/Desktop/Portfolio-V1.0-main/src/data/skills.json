@@ -1,0 +1,34 @@
+[
+    {
+      "title": "HTML5",
+      "imageSrc": "skills/html.png"
+    },
+    {
+      "title": "CSS3",
+      "imageSrc": "skills/css.png"
+    },
+    {
+      "title": "JavaScript",
+      "imageSrc": "skills/js.png"
+    },
+    {
+      "title": "React",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "Angular",
+      "imageSrc": "skills/angular.png"
+    },
+    {
+      "title": "Python",
+      "imageSrc": "skills/python.png"
+    },
+    {
+      "title": "R",
+      "imageSrc": "skills/r.png"
+    },
+    {
+      "title": "MySQL",
+      "imageSrc": "skills/adobe.png"
+    }
+]

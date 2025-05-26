@@ -1,0 +1,34 @@
+[
+    {
+      "title": "Eardrum Image Classification",
+      "imageSrc": "projects/eardrum.png",
+      "description": "Designed a deep learning system to classify eardrum images into normal, effusion, and tube cases. Compared CNN, ResNet-18, and AlexNet architectures on a dataset of 454 labeled images, achieving high accuracy and F1 scores for automated, objective diagnosis of middle ear conditions.",
+      "skills": ["CNN", "AlexNet", "ResNet-18", "Deep Learning", "Medical Imaging"],
+      "demo": "https://github.com/jasmine/eardrum-classification",
+      "source": "https://github.com/jasmine/eardrum-classification"
+    },
+    {
+      "title": "Stock Market Forecasting",
+      "imageSrc": "projects/stock.png",
+      "description": "Developed complex time-series forecasting models using LSTM and Random Forest algorithms for predicting stock market trends. Integrated real-time data feeds using the Yahoo Finance API into a Streamlit dashboard for interactive data visualization.",
+      "skills": ["Python", "LSTM", "Random Forest", "PowerBI", "Streamlit", "Yahoo Finance API"],
+      "demo": "https://github.com/jasmine/stock-forecasting",
+      "source": "https://github.com/jasmine/stock-forecasting"
+    },
+    {
+      "title": "Purchase Behavior Analysis",
+      "imageSrc": "projects/purchase.png",
+      "description": "Leveraged machine learning to forecast retail sales and optimize business decisions. Merged and cleaned multi-source data, engineered features, and evaluated models including Random Forest and Extra Trees. Achieved best results with Random Forest, providing actionable insights for inventory, promotions, and operational efficiency.",
+      "skills": ["Python", "Pandas", "NumPy", "Scikit-Learn", "Random Forest", "Extra Trees", "EDA"],
+      "demo": "https://github.com/jasmine/purchase-analysis",
+      "source": "https://github.com/jasmine/purchase-analysis"
+    },
+    {
+      "title": "Kidney Disease Prediction Model",
+      "imageSrc": "projects/kidney.png",
+      "description": "Built a robust machine learning tool for early detection and risk assessment of kidney disease using clinical data from Kaggle. Implemented and compared KNN, Decision Tree, Random Forest, AdaBoost, Gradient Boosting, Naïve Bayes, and Logistic Regression, achieving up to 99% accuracy with Gradient Boosting. Enabled proactive healthcare interventions through precise risk prediction.",
+      "skills": ["Python", "Scikit-learn", "KNN", "Random Forest", "Gradient Boosting", "Logistic Regression"],
+      "demo": "https://github.com/jasmine/kidney-disease-prediction",
+      "source": "https://github.com/jasmine/kidney-disease-prediction"
+    }
+]

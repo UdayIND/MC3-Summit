@@ -1,0 +1,335 @@
+@import "../../vars.css";
+
+.container {
+    margin-top: 76px;
+    color: var(--color-text);
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Revert to transparent to inherit App background */
+}
+
+.title {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1.73px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.projects {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Gap between cards */
+    width: 100%;
+    max-width: 760px; /* Reverted max-width */
+    margin: 0 auto; /* Center project grid */
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .projects {
+        gap: 20px; /* Adjusted gap for mobile */
+        max-width: 100%; /* Allow full width on smaller screens */
+        justify-content: center; /* Center items on mobile */
+    }
+
+    .projectCard {
+        width: 100%; /* Full width on very small screens */
+        max-width: 320px; /* Limit card width on mobile */
+    }
+}
+
+.projectCard {
+    background-color: var(--color-dark); /* Dark background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure border-radius clips content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 15px); /* Set width for two cards with gap */
+    padding-bottom: 20px; /* Add padding at the bottom of the card */
+}
+
+@media screen and (max-width: 768px) { /* Adjust breakpoint if needed */
+    .projectCard {
+        width: calc(50% - 10px); /* Adjust width for smaller screens if gap changes */
+    }
+}
+
+@media screen and (max-width: 500px) { /* Stack cards on very small screens */
+    .projectCard {
+        width: 100%;
+    }
+}
+
+.projectImage {
+    width: 300px; /* Set fixed width for the image */
+    height: 180px; /* Set fixed height for the image */
+    object-fit: cover; /* Cover the area without distorting aspect ratio */
+    border-radius: 10px; /* Rounded corners on all sides */
+    margin: 10px auto; /* Center the image and add margin */
+}
+
+.projectContent {
+    padding: 0 20px 20px 20px; /* Adjust padding inside the card (top, right, bottom, left) */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between text elements */
+}
+
+.projectTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF; /* White color for title */
+    margin-bottom: 5px;
+}
+
+.projectCategory {
+    font-size: 14px;
+    font-weight: 400;
+    color: #DAA520; /* Gold color for category */
+    margin-bottom: 10px;
+}
+
+.projectDescription {
+    font-size: 14px;
+    color: #CCCCCC; /* Light grey for description */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.projectTools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Push tools to the bottom */
+}
+
+.projectTool {
+    font-size: 12px;
+    color: #00FFFF; /* Cyan color for tools/hashtags */
+    /* Remove any background or border to look like hashtags */
+}
+
+/* Remove or adjust existing styles that conflict with the new design */
+
+.projectCard:hover {
+    /* transform: translateY(-8px) scale(1.03); Remove conflicting transform */
+}
+
+/* Add a semi-transparent overlay */
+.cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Reduced opacity */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+    padding: 24px; /* Increased padding for the content */
+    color: var(--color-text); /* Ensure text is visible */
+    box-shadow: 0 0 15px 2px rgba(162, 89, 247, 0.3); /* Subtle light glow effect */
+    border-radius: 10px; /* Match card border-radius */
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+    /* Removed flex-grow as content is aligned to bottom */
+    /* Removed as content is stacked */
+}
+
+.projectDesc {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 16px; /* Increased space below description */
+    min-height: unset;
+    max-height: unset;
+    overflow: visible;
+    text-overflow: unset;
+    text-align: left;
+}
+
+.toolsContainer {
+    margin-top: 16px; /* Increased space above tools */
+    margin-bottom: 16px; /* Increased space below tools */
+    padding-top: 16px; /* Increased padding above tools for separator line */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+}
+
+.toolsTitle {
+    /* Removed as per user request */
+    display: none;
+}
+
+.toolsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.toolItem {
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background for each tool */
+    color: #fff; /* White color for tool text */
+    padding: 3px 8px;
+    border-radius: 20px;
+}
+
+.projectMeta {
+    /* Removed as per user request */
+    display: none;
+}
+
+.links {
+    margin-top: 16px; /* Increased space above links */
+    display: flex;
+    gap: 12px; /* Adjusted gap between links */
+    /* justify-content: center; */
+}
+
+.link {
+    text-decoration: none;
+    color: #fff; /* White text for links */
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 20px; /* Adjusted border-radius to match tool items */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for links */
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    /* Removed properties for glowing effect */
+}
+
+.link:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly less transparent on hover */
+    transform: translateY(-2px);
+    color: #fff; /* Keep text white on hover */
+    border-color: rgba(255, 255, 255, 0.5); /* Lighter border on hover */
+}
+
+.loadMoreButton {
+    margin-top: 40px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-background);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loadMoreButton:hover {
+    background-color: var(--color-secondary);
+}
+
+@media screen and (max-width: 830px) {
+    .projectCard {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 300px; /* Limit width if needed */
+    }
+
+    .projectContent {
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .projectTitle {
+        font-size: 18px;
+    }
+
+    .projectCategory {
+        font-size: 12px;
+    }
+
+    .projectDescription {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .projectTools {
+        gap: 6px;
+    }
+
+    .projectTool {
+        font-size: 10px;
+    }
+
+    .projectInfo {
+        padding: 12px 18px;
+    }
+
+    .projectDesc {
+        font-size: 14px;
+    }
+
+    .toolsContainer {
+        margin-bottom: 10px;
+    }
+
+    .toolsTitle {
+        font-size: 12px;
+    }
+
+    .toolsList {
+        gap: 6px;
+    }
+
+    .toolItem {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .projectMeta {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .projectLang,
+    .projectYear {
+        font-size: 11px;
+        padding: 2px 8px;
+    }
+
+    .links {
+        gap: 8px;
+    }
+
+    .link {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+
+.githubLink {
+    position: absolute;
+    bottom: 15px; /* Adjust as needed */
+    right: 15px; /* Adjust as needed */
+    color: #fff; /* White color for the icon */
+    font-size: 24px; /* Adjust size as needed */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.githubIcon {
+    /* Add any specific icon styles here if needed */
+}

@@ -1,0 +1,184 @@
+@import "../../vars.css";
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0; /* Remove horizontal padding */
+  color: var(--color-text);
+  background-color: transparent; /* Revert to transparent to inherit App background */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.skills {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.skillImageContainer {
+  background-color: var(--color-secondary);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill:hover .skillImageContainer {
+  background-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.skillImageContainer img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill p {
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px; /* Reduced max-width for narrower section */
+  margin: 0 auto; /* Center the content */
+}
+
+.historyItem {
+  background-color: var(--color-dark);
+  border-radius: 10px;
+  padding: 15px; /* Add padding to items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.dateCol {
+  font-size: 16px; /* Adjusted font size */
+  color: var(--color-secondary-text);
+  white-space: nowrap; /* Prevent wrapping for dates */
+}
+
+.cardCol {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.historyItemDetails h3 {
+  font-size: 16px; /* Adjusted font size */
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+.historyItemDetails p {
+  font-size: 16px; /* Adjusted font size for description */
+  margin-bottom: 10px;
+}
+
+.company {
+  font-style: italic;
+}
+
+.toolsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tool {
+  background-color: var(--color-secondary); /* Lighter blue background */
+  color: var(--color-background);
+  padding: 4px 12px; /* Adjust padding for pill shape */
+  border-radius: 999px; /* Pill shape */
+  font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0; /* Remove horizontal padding on mobile */
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .history {
+    gap: 20px;
+  }
+
+  .historyItem {
+    padding: 10px; /* Add padding to items on mobile */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dateCol {
+    font-size: 14px; /* Adjusted font size for mobile */
+    white-space: normal;
+  }
+
+  .historyItemDetails h3 {
+    font-size: 14px; /* Adjusted font size for mobile */
+  }
+
+  .historyItemDetails p {
+    font-size: 14px; /* Adjusted font size for mobile */
+    margin-bottom: 8px;
+  }
+
+  .toolsRow {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tool {
+    font-size: 10px;
+  }
+}

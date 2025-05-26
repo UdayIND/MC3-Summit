@@ -1,0 +1,126 @@
+@import "../../vars.css";
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0; /* Remove horizontal padding */
+  color: var(--color-text);
+  background-color: transparent; /* Revert to transparent to inherit App background */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+}
+
+.educationItems {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px; /* Reduced max-width for narrower section */
+  margin: 0 auto; /* Center the content */
+}
+
+.educationItem {
+  background-color: var(--color-dark); /* Match background of experience items */
+  border-radius: 10px;
+  padding: 20px; /* Add padding back to items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dates {
+  font-size: 16px;
+  color: var(--color-secondary-text);
+  margin-bottom: 10px;
+}
+
+.educationItemText h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+.educationItemText p:nth-of-type(1) { /* Style for the institution paragraph */
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.courseworkHeading {
+  font-size: 16px;
+  font-weight: 600;
+  /* margin-bottom: 5px; Remove if not needed for inline */
+}
+
+/* Removed courseworkList and courseworkList li styles */
+
+.educationItemText p:last-child { /* Style for the CGPA paragraph */
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.coursework { /* Style for the coursework paragraph */
+    font-size: 14px;
+    color: var(--color-secondary-text);
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0; /* Remove horizontal padding on mobile */
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .educationItems {
+    gap: 20px;
+  }
+
+  .educationItem {
+    padding: 15px; /* Add padding back to items on mobile */
+  }
+
+  .dates {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .educationItemText h3 {
+    font-size: 14px;
+  }
+
+  .educationItemText p:nth-of-type(1) {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .courseworkHeading {
+    font-size: 14px;
+    /* margin-bottom: 3px; Remove if not needed for inline */
+  }
+
+  /* Removed courseworkList and courseworkList li styles for mobile */
+
+  .educationItemText p:last-child {
+     font-size: 14px;
+     margin-top: 8px;
+  }
+
+   .coursework { /* Style for the coursework paragraph for mobile */
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+} 

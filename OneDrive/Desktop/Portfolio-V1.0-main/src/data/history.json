@@ -1,0 +1,32 @@
+[
+    {
+      "role": "MES Lite Developer",
+      "organisation": "Mindsprint",
+      "location": "Chennai, India",
+      "startDate": "January 2024",
+      "endDate": "June 2024",
+      "tools": ["Angular", "HTML", "CSS", ".NET", "SQL Server", "API", "Swagger", "MySCADA", "Visual Studio", "JavaScript"],
+      "description": "Developed MES Lite, a proprietary Manufacturing Execution System utilizing .NET, Angular, and JavaScript to enhance production tracking and data management while interfacing with SQL Server databases for enterprise data storage. Engineered robust XML processing and RESTful API mechanisms using Swagger and MySCADA tools within Visual Studio, automating data extraction, transformation, and integration between disparate systems while ensuring data accuracy and real-time availability. Led SQL Server database architecture redesign and migration to scalable server solutions with zero downtime, maintaining system reliability and optimal performance through optimized query development and comprehensive testing. Created interactive data visualization interfaces using HTML, CSS, and Angular with 30+ customized reports, enabling real-time analytics through seamless integration of popup forms linked directly to databases for improved decision-making capabilities.",
+      "imageSrc": "history/mindsprint.png"
+    },
+    {
+      "role": "MES Engineer",
+      "organisation": "Mindsprint (COVL)",
+      "location": "Chennai, India",
+      "startDate": "January 2023",
+      "endDate": "June 2024",
+      "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools"],
+      "description": "Enhanced productivity by 30% through implementing and optimizing the Evaporation Line, improving data collection and analysis. Designed and optimized automated systems, streamlining multi-line operations and minimizing production bottlenecks. Constructed automated reporting features within the MES that provided real-time performance analytics; this development enabled rapid decision-making processes saving approximately 15 hours weekly previously spent compiling manual reports. Resolved critical technical issues in real time, achieving 90% reduction in downtime and ensuring consistent production flow. Collaborated with on-site teams in Vietnam for over 2 months to develop and enhance plant lines, leveraging strong communication and teamwork to achieve operational improvements and system upgrades.",
+      "imageSrc": "history/mindsprint.png"
+    },
+    {
+      "role": "Junior MES Engineer",
+      "organisation": "Mindsprint (Ducati)",
+      "location": "Chennai, India",
+      "startDate": "January 2023",
+      "endDate": "August 2023",
+      "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools", "SAP", "Wonderware Edge Server", "System Platform IDE"],
+      "description": "Led the MES implementation for a roasted nuts facility in Vietnam, tailoring the system to specialized production needs and ensuring seamless integration with SAP modules (MM, QM, PP, PM). Designed a dynamic recipe management system interfacing with SAP MM for precise process control. Built end-to-end material traceability from receiving to finished goods, synchronizing inventory in real-time between MES and SAP. Developed a lab QC system enabling technicians to input parameters directly into MES, automating batch approvals with SAP QM sync. Integrated machine sensors via Wonderware Edge Server, storing data in SQL and visualizing it through System Platform IDE, triggering SAP PM maintenance alerts. Engineered custom scheduling tools with two-way SAP PP communication, enhancing resource planning. Delivered analytics dashboards combining MES and SAP data, enabling data-driven decisions that improved production efficiency and traceability.",
+      "imageSrc": "history/mindsprint.png"
+    }
+]

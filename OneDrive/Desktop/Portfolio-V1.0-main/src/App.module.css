@@ -1,0 +1,22 @@
+@import "./vars.css";
+
+.App {
+    /* background-color: var(--color-bg); */
+    background-image: radial-gradient(at 70% top, rgba(26, 26, 46, 0.8), rgba(12, 12, 18, 1)); /* Dark radial gradient for overall background */
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 830px) {
+    .App {
+        padding-top: 60px;
+    }
+}
+
+/* Removed customCursor styles */
+
+/* Removed body cursor style */

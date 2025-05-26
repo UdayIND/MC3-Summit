@@ -1,0 +1,118 @@
+@import "../../vars.css";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
+    box-shadow: 0 16px 14px 0 #04152d;
+    padding: 18px 24px;
+    max-width: 345px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 26px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.description {
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.skills {
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.skill {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 4px 12px;
+    transition: all 0.3s ease;
+}
+
+.skill:hover {
+    background: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.links {
+    width: 100%;
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 100px;
+    background: var(--color-primary);
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+}
+
+.link:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .image {
+        height: 180px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .skill {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+
+    .link {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}

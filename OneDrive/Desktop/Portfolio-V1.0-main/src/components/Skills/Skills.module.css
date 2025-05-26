@@ -1,0 +1,118 @@
+@import "../../vars.css";
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.skillsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 48px 10%;
+  border-radius: 0;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+  width: 100%;
+  font-family: var(--font-roboto);
+}
+
+.skillIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--color-primary);
+  border-radius: 20px;
+  background: transparent;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+  margin: 0;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.skillIconWrapper:hover {
+  border-color: var(--color-text);
+  box-shadow: 0 8px 32px 0 #04152d;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.skillIcon {
+  width: 54px;
+  height: 54px;
+  font-size: 54px;
+  margin: 0;
+  transition: transform 0.2s;
+}
+
+.skillIconWrapper:hover .skillIcon {
+  transform: scale(1.12);
+}
+
+.skillIconBadge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #232526 60%, #414345 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+  box-shadow: 0 4px 16px rgba(55, 118, 171, 0.15);
+}
+
+.pythonBadge {
+  background: linear-gradient(135deg, #3776AB 60%, #FFD43B 100%);
+}
+
+@media screen and (max-width: 900px) {
+  .skillsRow {
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 24px 5%;
+    max-width: 100%;
+  }
+  .heading {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  .skillIconWrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    border-width: 2px;
+  }
+  @keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+  .skillIcon {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+  }
+} 
