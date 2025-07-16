@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 MC3 Summit: A Decade of Growth | Monroe County, Indiana</title>
+    <meta name="description" content="Monroe County Childhood Conditions Summit 2025 - Interactive data presentation showcasing a decade of progress in empowering youth and strengthening our community.">
+    <meta name="keywords" content="Monroe County, Indiana, MC3 Summit, childhood conditions, youth development, community wellbeing, government data">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Monroe County Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="county-branding">
+                <div class="county-name">Monroe County, Indiana</div>
+                <div class="county-tagline">Welcoming people from all walks of life.</div>
+            </div>
+            <h1 class="summit-title">2025 MC3 Summit</h1>
+            <h2 class="summit-subtitle">Monroe County Childhood Conditions</h2>
+            <div class="summit-theme">A Decade of Growth: Empowering Youth, Strengthening Our Village</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Summit navigation">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#economic" class="nav-link active" role="button" aria-label="Navigate to Economic Narrative">
+                        Economic Squeeze
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link" role="button" aria-label="Navigate to Education Narrative">
+                        Education Pathway
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#wellbeing" class="nav-link" role="button" aria-label="Navigate to Wellbeing Narrative">
+                        Community Wellbeing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#food" class="nav-link" role="button" aria-label="Navigate to Food Security Narrative">
+                        Food Security
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#welfare" class="nav-link" role="button" aria-label="Navigate to Child Welfare Narrative">
+                        Child Welfare
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Economic Squeeze Narrative -->
+        <section id="economic" class="narrative" aria-labelledby="economic-title">
+            <div class="narrative-header">
+                <h2 id="economic-title" class="narrative-title">The Economic Squeeze on Our Village</h2>
+                <p class="narrative-description">
+                    Exploring how the gap between family income and rising childcare costs creates economic pressure, 
+                    while examining geographic disparities in family stress across Monroe County census tracts.
+                </p>
+            </div>
+
+            <div class="narrative-content">
+                <div class="controls">
+                    <div class="control-group">
+                        <button id="toggleDisparity" class="btn" aria-label="Toggle geographic disparity view">
+                            Toggle Geographic Disparity View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">Income Growth vs Rising Childcare Burden (2010-2024)</h3>
+                    <div id="economicChart" role="img" aria-label="Interactive chart showing economic trends"></div>
+                </div>
+
+                <div class="insight-box" role="complementary">
+                    <h4 class="insight-title">Economic Analysis</h4>
+                    <p class="insight-text">
+                        <strong>Monroe County Data Sources:</strong> U.S. Census Bureau American Community Survey (S1903 Median Income), 
+                        Child Care Aware cost analysis, USDA SNAP participation data, Monroe County Housing Authority records. 
+                        The shaded area represents families caught between insufficient income growth and rising childcare costs, 
+                        while geographic analysis reveals concentrated stress in specific census tracts.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Pathway Narrative -->
+        <section id="education" class="narrative" aria-labelledby="education-title">
+            <div class="narrative-header">
+                <h2 id="education-title" class="narrative-title">The Pathway from Education to Opportunity</h2>
+                <p class="narrative-description">
+                    Following student journeys from 9th grade through graduation and into employment, with demographic analysis 
+                    and interventions that break cycles of educational disruption in Monroe County.
+                </p>
+            </div>
+
+            <div class="narrative-content">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="demographicFilter" class="sr-only">Filter by demographic group</label>
+                        <select id="demographicFilter" aria-label="Select demographic group for analysis">
+                            <option value="all">All Students</option>
+                            <option value="hispanic">Hispanic/Latino</option>
+                            <option value="black">Black/African American</option>
+                            <option value="white">White</option>
+                            <option value="asian">Asian</option>
+                            <option value="frl">Free/Reduced Lunch Eligible</option>
+                        </select>
+                        
+                        <button id="cohort2015" class="btn" aria-label="View 2015 graduation cohort">2015 Cohort</button>
+                        <button id="cohort2020" class="btn active" aria-label="View 2020 graduation cohort">2020 Cohort</button>
+                        
+                        <button id="drillDownBtn" class="btn" aria-label="Drill down into suspension impact analysis" style="display: none;">
+                            🔍 Drill Down: Suspension Impact
+                        </button>
+                        <button id="resetEducationBtn" class="btn" aria-label="Reset to main education view" style="display: none;">
+                            ← Back to Main View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title" id="educationChartTitle">Student Journey: From 9th Grade to Employment (2020 Cohort)</h3>
+                    <div id="educationChart" role="img" aria-label="Interactive education pathway visualization"></div>
+                </div>
+
+                <div class="insight-box" role="complementary">
+                    <h4 class="insight-title">Education Analysis</h4>
+                    <p class="insight-text">
+                        <strong>Monroe County Data Sources:</strong> Monroe County Community School Corporation enrollment and graduation data, 
+                        Indiana Department of Education suspension records, U.S. Census Bureau School Enrollment tables (S1401), 
+                        Indiana Department of Workforce Development employment statistics. 
+                        Flow visualization demonstrates how suspensions create pathway disruptions leading to different life outcomes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Wellbeing Narrative -->
+        <section id="wellbeing" class="narrative" aria-labelledby="wellbeing-title">
+            <div class="narrative-header">
+                <h2 id="wellbeing-title" class="narrative-title">Building a Healthier Village</h2>
+                <p class="narrative-description">
+                    Tracking Monroe County's evolution from crisis response to proactive community care, showing how collaborative 
+                    interventions address underlying stressors while improving overall child and family wellbeing outcomes.
+                </p>
+            </div>
+
+            <div class="narrative-content">
+                <div class="chart-container">
+                    <h3 class="chart-title">Community Wellbeing Transformation (2010-2024)</h3>
+                    <div id="wellbeingChart" role="img" aria-label="Interactive community wellbeing trends chart"></div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">Underlying Community Stressors</h3>
+                    <div id="stressorsChart" role="img" aria-label="Chart showing community stress indicators"></div>
+                </div>
+
+                <div class="insight-box" role="complementary">
+                    <h4 class="insight-title">Wellbeing Analysis</h4>
+                    <p class="insight-text">
+                        <strong>Monroe County Data Sources:</strong> Indiana Department of Child Services reports, Monroe County Juvenile Probation records, 
+                        Youth Services Bureau collaborative care statistics, Monroe County Health Department community health assessments.
+                        <span class="collaborative-care-info">
+                            Collaborative care
+                            <span class="care-info-icon" tabindex="0" role="button" aria-label="Learn about collaborative care">ℹ️</span>
+                            <div class="care-tooltip" role="tooltip">
+                                Collaborative care involves coordinated services between schools, healthcare providers, 
+                                social services, and community organizations to address children's comprehensive needs through integrated support systems.
+                            </div>
+                        </span>
+                        represents our community's shift toward prevention and early intervention rather than crisis response.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Security Narrative -->
+        <section id="food" class="narrative" aria-labelledby="food-title">
+            <div class="narrative-header">
+                <h2 id="food-title" class="narrative-title">Nourishing Our Future</h2>
+                <p class="narrative-description">
+                    Examining Monroe County's comprehensive approach to childhood nutrition through multiple support programs, 
+                    while identifying remaining gaps and the community impact of coordinated food security initiatives.
+                </p>
+            </div>
+
+            <div class="narrative-content">
+                <div class="chart-container">
+                    <h3 class="chart-title">Food Security Support System (2010-2024)</h3>
+                    <div id="foodChart" role="img" aria-label="Interactive food security support visualization"></div>
+                </div>
+
+                <div class="insight-box" role="complementary">
+                    <h4 class="insight-title">Food Security Analysis</h4>
+                    <p class="insight-text">
+                        <strong>Monroe County Data Sources:</strong> USDA SNAP participation records, Indiana WIC program data, 
+                        Monroe County School Corporation free/reduced lunch statistics, Feeding America food insecurity estimates.
+                        The highlighted gap represents children still experiencing food insecurity despite comprehensive program coverage, 
+                        showing where community partnerships and innovative approaches are most needed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Child Welfare Narrative -->
+        <section id="welfare" class="narrative" aria-labelledby="welfare-title">
+            <div class="narrative-header">
+                <h2 id="welfare-title" class="narrative-title">The Child Welfare Crossroads</h2>
+                <p class="narrative-description">
+                    Mapping critical intervention points in Monroe County's child welfare system, from initial cases through 
+                    family preservation efforts, showing how early intervention strategies impact long-term family outcomes.
+                </p>
+            </div>
+
+            <div class="narrative-content">
+                <div class="chart-container">
+                    <h3 class="chart-title">Child Welfare System Evolution (2010-2024)</h3>
+                    <div id="welfareChart" role="img" aria-label="Interactive child welfare system flow diagram"></div>
+                </div>
+
+                <div class="insight-box" role="complementary">
+                    <h4 class="insight-title">Child Welfare Analysis</h4>
+                    <p class="insight-text">
+                        <strong>Monroe County Data Sources:</strong> Indiana Department of Child Services case management data, 
+                        Monroe County CASA (Court Appointed Special Advocates) records, Indiana Department of Health child abuse registry, 
+                        Monroe County Juvenile Probation CHINS (Children in Need of Services) caseloads.
+                        Flow visualization demonstrates intervention points where family preservation services can prevent more intensive interventions.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for detailed breakdowns -->
+    <div id="detailModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="modal-title">Detailed Analysis</h3>
+                <span class="close" aria-label="Close modal" role="button" tabindex="0">&times;</span>
+            </div>
+            <div id="modalChart" role="img" aria-label="Detailed analysis chart"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-county">Monroe County, Indiana</div>
+            <div class="footer-tagline">Welcoming people from all walks of life.</div>
+            <div class="footer-divider"></div>
+            <div class="footer-info">
+                <p><strong>2025 Monroe County Childhood Conditions (MC3) Summit</strong></p>
+                <p>Data Integration & Analysis: Monroe County Government</p>
+                <p>Sources: U.S. Census Bureau, Indiana Dept. of Education, Indiana DCS, USDA, Monroe County agencies</p>
+                <p>Methodology: Longitudinal analysis (2010-2024) with demographic disaggregation and geographic mapping</p>
+                <p>For questions about this data presentation, contact Monroe County Employee Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
