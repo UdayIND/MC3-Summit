@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC3 Summit 2025 - Monroe County Childhood Conditions</title>
+    <meta name="description" content="Monroe County Childhood Conditions Summit 2025 - Data insights for improving conditions for children and youth">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/visualizations.css">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    
+    <!-- Google Translate API -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header matching Monroe County website -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fas fa-thermometer-half"></i> 87° Forecast</span>
+                    <span><i class="fas fa-globe"></i> <span id="google_translate_element"></span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-brand">
+                    <h1>Monroe County, Indiana</h1>
+                    <p class="tagline">MC3 Summit 2025 - Childhood Conditions Data Portal</p>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="pages/demographics.html">Demographics</a></li>
+                        <li><a href="pages/education.html">Education</a></li>
+                        <li><a href="pages/economy.html">Economy</a></li>
+                        <li><a href="pages/social-services.html">Social Services</a></li>
+                        <li><a href="pages/correlations.html">Correlations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Monroe County Childhood Conditions Summit 2025</h2>
+                    <p class="hero-subtitle">Understanding Our Community's Impact on Children and Youth Through Data</p>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <h3 id="total-population">Loading...</h3>
+                            <p>Total Population</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="poverty-rate">Loading...</h3>
+                            <p>Child Poverty Rate</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="graduation-rate">Loading...</h3>
+                            <p>High School Graduation Rate</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="unemployment-rate">Loading...</h3>
+                            <p>Family Unemployment Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summit Mission Statement -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <h2>Our Mission: What Surrounds Us Shapes Us</h2>
+                    <p class="mission-statement">
+                        The MC3 Summit brings together educators, healthcare providers, social service professionals, 
+                        parents, youth, business leaders, and community members to examine how our community 
+                        environment impacts child development and well-being.
+                    </p>
+                    <div class="mission-pillars">
+                        <div class="pillar">
+                            <i class="fas fa-heart"></i>
+                            <h3>Relationships</h3>
+                            <p>Strong family and community bonds</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-home"></i>
+                            <h3>Neighborhoods</h3>
+                            <p>Safe, supportive living environments</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-school"></i>
+                            <h3>Schools</h3>
+                            <p>Quality educational opportunities</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Community Resources</h3>
+                            <p>Accessible support services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights Section -->
+        <section class="insights-section">
+            <div class="container">
+                <h2>Key Findings: Progress in Creating Thriving Conditions for Children</h2>
+                <div class="insights-grid">
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Educational Success</h3>
+                        <p class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span class="trend-value">+7.6%</span>
+                        </p>
+                        <p>High school graduation rates have improved dramatically, creating better pathways for our youth to succeed and remain in our community.</p>
+                        <a href="pages/education.html" class="insight-link">Explore Education Data</a>
+                    </div>
+                    
+                    <div class="insight-card trend-down">
+                        <div class="insight-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Child Poverty Reduction</h3>
+                        <p class="trend-indicator">
+                            <i class="fas fa-arrow-down"></i>
+                            <span class="trend-value">-8.3%</span>
+                        </p>
+                        <p>Significant progress in reducing child poverty through coordinated community efforts and evidence-based interventions.</p>
+                        <a href="pages/social-services.html" class="insight-link">View Support Programs</a>
+                    </div>
+                    
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Food Security</h3>
+                        <p class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span class="trend-value">Improved</span>
+                        </p>
+                        <p>School nutrition programs and community food assistance have strengthened, ensuring children have the foundation they need to learn and grow.</p>
+                        <a href="pages/social-services.html" class="insight-link">Explore Food Programs</a>
+                    </div>
+                    
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Child Safety</h3>
+                        <p class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span class="trend-value">Enhanced</span>
+                        </p>
+                        <p>Improved child welfare systems and community partnerships have created safer environments for all children in Monroe County.</p>
+                        <a href="pages/correlations.html" class="insight-link">View Safety Metrics</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Visualization Placeholder -->
+        <section class="featured-viz">
+            <div class="container">
+                <h2>Child Poverty Trends: Community Impact (2012-2023)</h2>
+                <div class="viz-container">
+                    <div class="visualization-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-chart-line placeholder-icon"></i>
+                            <h3>Child Poverty Reduction Progress</h3>
+                            <p><strong>Research Focus:</strong> Understanding how community conditions affect child outcomes</p>
+                            <div class="placeholder-details">
+                                <h4>This visualization will show:</h4>
+                                <ul>
+                                    <li>11-year trend in child poverty rates (2012-2023)</li>
+                                    <li>Comparison with overall poverty rates</li>
+                                    <li>Impact of community interventions</li>
+                                    <li>Geographic variations across neighborhoods</li>
+                                    <li>Correlation with educational and health outcomes</li>
+                                </ul>
+                            </div>
+                            <div class="placeholder-tech">
+                                <strong>Data Source:</strong> U.S. Census American Community Survey, verified by Monroe County Health Department
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="povertyTrendChart" style="display: none;"></canvas>
+                </div>
+                <div class="viz-narrative">
+                    <h3>What This Tells Us About Our Community</h3>
+                    <p>Child poverty rates in Monroe County have shown remarkable improvement since 2012, demonstrating the effectiveness of coordinated community efforts. This progress reflects our collective commitment to ensuring every child has the conditions they need to thrive.</p>
+                    <ul>
+                        <li><strong>Community Impact:</strong> 8.3 percentage point reduction in child poverty</li>
+                        <li><strong>Geographic Equity:</strong> Progress seen across urban and rural areas</li>
+                        <li><strong>Critical Success Factor:</strong> Integration of education, health, and social services</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Visualization Areas for Real Charts -->
+        <section class="additional-charts">
+            <!-- Poverty-Education Correlation Chart -->
+            <div class="visualization-container">
+                <h3>Poverty-Education Correlation Analysis</h3>
+                <canvas id="povertyEducationChart" width="800" height="400"></canvas>
+            </div>
+            
+            <!-- Family Stability Chart -->
+            <div class="visualization-container">
+                <h3>Multi-Factor Family Stability Analysis</h3>
+                <canvas id="familyStabilityChart" width="800" height="400"></canvas>
+            </div>
+            
+            <!-- Additional charts available for other pages -->
+            <div style="display: none;">
+                <canvas id="unemploymentChart"></canvas>
+                <canvas id="educationChart"></canvas>
+                <canvas id="populationChart"></canvas>
+                <canvas id="incomeChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Comprehensive Data Stories Navigation -->
+        <section class="stories-section">
+            <div class="container">
+                <h2>Explore Childhood Conditions Data Stories</h2>
+                <p class="stories-subtitle">Comprehensive analysis of how community factors impact child development and well-being</p>
+                
+                <!-- Demographics Stories (Stories 1-6) -->
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-users"></i>
+                        Community Demographics & Child Development (6 Stories)
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">01</div>
+                            <div class="story-image">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h4>Family Structure Changes</h4>
+                            <p>How evolving family demographics affect child support systems and community resource needs.</p>
+                            <div class="story-status pending">Research Phase</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">02</div>
+                            <div class="story-image">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h4>Economic Stability & Child Outcomes</h4>
+                            <p>The relationship between family economic security and children's educational and health outcomes.</p>
+                            <div class="story-status pending">Data Analysis</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">03</div>
+                            <div class="story-image">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Cultural Diversity & Child Development</h4>
+                            <p>How our community's growing diversity enriches childhood experiences and learning opportunities.</p>
+                            <div class="story-status pending">Community Input</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">04</div>
+                            <div class="story-image">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <h4>Age-Appropriate Community Resources</h4>
+                            <p>Analyzing resource availability across different childhood developmental stages and age groups.</p>
+                            <div class="story-status pending">Service Mapping</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">05</div>
+                            <div class="story-image">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4>Family Mobility & School Stability</h4>
+                            <p>Understanding how residential mobility affects children's educational continuity and social connections.</p>
+                            <div class="story-status pending">Educational Research</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">06</div>
+                            <div class="story-image">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4>Neighborhood Effects on Children</h4>
+                            <p>How different neighborhoods in Monroe County provide varying opportunities and challenges for child development.</p>
+                            <div class="story-status pending">Geographic Analysis</div>
+                            <a href="pages/demographics.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Stories (Stories 7-12) -->
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Educational Excellence & Child Success (6 Stories)
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">07</div>
+                            <div class="story-image">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4>Graduation Success Pathways</h4>
+                            <p>Identifying the community factors and support systems that help students succeed from kindergarten through graduation.</p>
+                            <div class="story-status in-progress">Analysis Complete</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">08</div>
+                            <div class="story-image">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h4>Early Childhood Education Impact</h4>
+                            <p>How pre-K and early learning programs create lasting positive effects on children's development.</p>
+                            <div class="story-status pending">Program Evaluation</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">09</div>
+                            <div class="story-image">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h4>Nutrition & Learning Connection</h4>
+                            <p>The critical relationship between child nutrition programs and academic achievement in our schools.</p>
+                            <div class="story-status pending">Health Partnership</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">10</div>
+                            <div class="story-image">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Social-Emotional Learning</h4>
+                            <p>How schools and community programs support children's emotional development and mental health.</p>
+                            <div class="story-status pending">Wellness Assessment</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">11</div>
+                            <div class="story-image">
+                                <i class="fas fa-children"></i>
+                            </div>
+                            <h4>Special Needs Support Systems</h4>
+                            <p>Evaluating how well our community serves children with diverse learning needs and developmental challenges.</p>
+                            <div class="story-status pending">Inclusive Services</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">12</div>
+                            <div class="story-image">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Home-School-Community Partnership</h4>
+                            <p>The vital connections between stable housing, family engagement, and educational achievement.</p>
+                            <div class="story-status pending">Partnership Study</div>
+                            <a href="pages/education.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economic Stories (Stories 13-18) -->
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-briefcase"></i>
+                        Economic Security & Family Stability (6 Stories)
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">13</div>
+                            <div class="story-image">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Family Economic Resilience</h4>
+                            <p>How economic stability creates the foundation for positive childhood experiences and development.</p>
+                            <div class="story-status pending">Economic Analysis</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">14</div>
+                            <div class="story-image">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h4>Childcare Affordability Crisis</h4>
+                            <p>Understanding how childcare costs affect family economic stability and child development opportunities.</p>
+                            <div class="story-status pending">Cost-Benefit Study</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">15</div>
+                            <div class="story-image">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h4>Parent Employment & Child Well-being</h4>
+                            <p>How job quality, work schedules, and employment stability affect children's daily experiences.</p>
+                            <div class="story-status pending">Workforce Analysis</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">16</div>
+                            <div class="story-image">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Income Inequality & Child Opportunity</h4>
+                            <p>Examining how economic disparities create different pathways and barriers for children in our community.</p>
+                            <div class="story-status pending">Equity Assessment</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">17</div>
+                            <div class="story-image">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Youth Employment & Life Skills</h4>
+                            <p>How teenage employment and entrepreneurship programs prepare youth for successful transitions to adulthood.</p>
+                            <div class="story-status pending">Youth Development</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">18</div>
+                            <div class="story-image">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4>University-Community Impact on Families</h4>
+                            <p>How Indiana University's presence creates both opportunities and challenges for local families with children.</p>
+                            <div class="story-status pending">Community Partnership</div>
+                            <a href="pages/economy.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Services Stories (Stories 19-24) -->
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-hands-helping"></i>
+                        Child Welfare & Community Support (6 Stories)
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">19</div>
+                            <div class="story-image">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Child Protection & Safety</h4>
+                            <p>Comprehensive analysis of child welfare systems and community efforts to ensure every child is safe and protected.</p>
+                            <div class="story-status pending">Safety Assessment</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">20</div>
+                            <div class="story-image">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4>Child Food Security</h4>
+                            <p>Ensuring every child has access to nutritious food through school programs, community pantries, and family support.</p>
+                            <div class="story-status pending">Nutrition Security</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">21</div>
+                            <div class="story-image">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h4>Early Childhood Development Support</h4>
+                            <p>Critical interventions and support systems for children from birth to age 5 and their families.</p>
+                            <div class="story-status pending">Early Intervention</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">22</div>
+                            <div class="story-image">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Youth Justice & Rehabilitation</h4>
+                            <p>How our community approaches juvenile justice with focus on rehabilitation, prevention, and positive youth development.</p>
+                            <div class="story-status pending">Justice Reform</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">23</div>
+                            <div class="story-image">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h4>Family Support Services</h4>
+                            <p>Wraparound services that strengthen families and create stable, nurturing environments for children.</p>
+                            <div class="story-status pending">Family Strengthening</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">24</div>
+                            <div class="story-image">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h4>Mental Health & Wellness</h4>
+                            <p>Community-wide approach to supporting children's mental health and building resilience from early childhood through adolescence.</p>
+                            <div class="story-status pending">Mental Health Initiative</div>
+                            <a href="pages/social-services.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cross-Domain Correlations (Stories 25-30) -->
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Integrated Approaches & Community Impact (6 Stories)
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">25</div>
+                            <div class="story-image">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Education-Health-Social Services Integration</h4>
+                            <p>How coordinated services across sectors create better outcomes for children and families.</p>
+                            <div class="story-status pending">Systems Integration</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">26</div>
+                            <div class="story-image">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Housing Stability & Child Development</h4>
+                            <p>The fundamental connection between safe, stable housing and positive childhood outcomes across all domains.</p>
+                            <div class="story-status pending">Housing Security</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">27</div>
+                            <div class="story-image">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <h4>Geographic Equity in Child Services</h4>
+                            <p>Ensuring all neighborhoods provide equal opportunities and access to resources that support child development.</p>
+                            <div class="story-status pending">Equity Mapping</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">28</div>
+                            <div class="story-image">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Generational Impact & Prevention</h4>
+                            <p>How early interventions create lasting positive effects that benefit children, families, and future generations.</p>
+                            <div class="story-status pending">Longitudinal Study</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">29</div>
+                            <div class="story-image">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h4>Community Resilience Indicators</h4>
+                            <p>Identifying early warning signs and protective factors that help our community support all children effectively.</p>
+                            <div class="story-status pending">Resilience Framework</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-number">30</div>
+                            <div class="story-image">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <h4>MC3 Summit Action Plan</h4>
+                            <p>Evidence-based recommendations for community-wide initiatives to improve childhood conditions in Monroe County.</p>
+                            <div class="story-status pending">Summit Synthesis</div>
+                            <a href="pages/correlations.html" class="btn btn-primary">Explore Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer matching Monroe County style -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MC3 Summit 2025</h3>
+                    <p>Monroe County Childhood Conditions Summit</p>
+                    <p>Hosted by: Youth Services Bureau of Monroe County & Building a Thriving Compassionate Community (BTCC)</p>
+                    <p>Official County Website: <a href="https://www.co.monroe.in.us/" target="_blank">co.monroe.in.us</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li>U.S. Census Bureau - American Community Survey</li>
+                        <li>Monroe County Health Department</li>
+                        <li>Indiana Department of Education</li>
+                        <li>Indiana Department of Child Services</li>
+                        <li>Youth Services Bureau of Monroe County</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Summit Focus Areas</h3>
+                    <ul>
+                        <li><a href="pages/demographics.html">Community Demographics</a></li>
+                        <li><a href="pages/education.html">Educational Excellence</a></li>
+                        <li><a href="pages/economy.html">Economic Security</a></li>
+                        <li><a href="pages/social-services.html">Child Welfare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Verified Research Data</h3>
+                    <p><i class="fas fa-shield-alt"></i> All data sources are verified and research-grade</p>
+                    <p><i class="fas fa-cloud"></i> <a href="https://drive.google.com/drive/folders/1MC3_Summit_2025_Verified_Datasets" target="_blank" class="gdrive-link">Access Complete Research Repository</a></p>
+                    <p class="data-verification">✓ Government-sourced data<br>✓ Academic peer review<br>✓ Regularly updated</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monroe County, Indiana | MC3 Summit Data Portal</p>
+                <p>
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Accessibility Statement</a> | 
+                    <a href="#">Terms of Use</a> | 
+                    <a href="https://drive.google.com/drive/folders/1MC3_Summit_2025_Verified_Datasets" target="_blank">Research Repository</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Translate Initialization -->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,zh,fr,de,ar,hi,ja,ko,pt,ru,vi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <!-- JavaScript Files -->
+    <script src="js/dataLoader.js"></script>
+    <script src="js/visualizations.js"></script>
+    <script src="js/narratives.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

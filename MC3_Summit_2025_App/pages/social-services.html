@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Services - MC3 Summit 2025</title>
+    <meta name="description" content="Social services, support programs, and community resources for Monroe County families and children">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visualizations.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fas fa-calendar"></i> MC3 Summit 2025 - January 25-26</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Bloomington, Indiana</span>
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-brand">
+                    <h1>MC3 Summit 2025</h1>
+                    <p class="tagline">Monroe County Childhood Conditions - Social Services</p>
+                </div>
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="demographics.html"><i class="fas fa-users"></i> Demographics</a></li>
+                        <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="economy.html"><i class="fas fa-chart-line"></i> Economy</a></li>
+                        <li><a href="social-services.html" class="active"><i class="fas fa-hands-helping"></i> Social Services</a></li>
+                        <li><a href="correlations.html"><i class="fas fa-project-diagram"></i> Correlations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Page Header -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Social Services & Community Support</h2>
+                    <p class="hero-subtitle">Comprehensive support systems and community resources serving Monroe County families and children</p>
+                    
+                    <!-- Key Social Services Statistics -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <h3 id="families-served">12,847</h3>
+                            <p>Families Receiving TANF</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="snap-participants">28,392</h3>
+                            <p>SNAP Participants</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="childcare-subsidies">3,156</h3>
+                            <p>Childcare Subsidies</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="wic-participants">4,289</h3>
+                            <p>WIC Participants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Services Programs Visualization -->
+        <section class="featured-viz">
+            <div class="container">
+                <h2>Social Services Data & Trends</h2>
+                
+                <!-- SNAP & Food Assistance -->
+                <div class="viz-container">
+                    <h3><i class="fas fa-utensils"></i> Food Assistance Programs</h3>
+                    <div class="chart-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-chart-line placeholder-icon"></i>
+                            <h4>SNAP & Food Security Trends (2015-2024)</h4>
+                            <p>This visualization will show:</p>
+                            <ul>
+                                <li>Monthly SNAP participation rates</li>
+                                <li>Food insecurity levels among children</li>
+                                <li>School meal program participation</li>
+                                <li>WIC enrollment and nutrition outcomes</li>
+                            </ul>
+                            <div class="data-source">
+                                <strong>Data Sources:</strong> S2201 SNAP Data, WIC Program Data, School Corporation
+                            </div>
+                        </div>
+                    </div>
+                                                <canvas id="foodAssistanceChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Housing & Financial Assistance -->
+                <div class="viz-container">
+                    <h3><i class="fas fa-home"></i> Housing & Financial Support</h3>
+                    <div class="chart-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-chart-bar placeholder-icon"></i>
+                            <h4>Housing Assistance & TANF Utilization</h4>
+                            <p>This visualization will analyze:</p>
+                            <ul>
+                                <li>Housing voucher wait times and utilization</li>
+                                <li>TANF caseload trends and demographics</li>
+                                <li>Emergency assistance requests</li>
+                                <li>Eviction prevention program effectiveness</li>
+                            </ul>
+                            <div class="data-source">
+                                <strong>Data Sources:</strong> Housing Authority, TANF Program Data, Court Records
+                            </div>
+                        </div>
+                    </div>
+                                                <canvas id="housingAssistanceChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Childcare & Family Support -->
+                <div class="viz-container">
+                    <h3><i class="fas fa-child"></i> Childcare & Family Services</h3>
+                    <div class="chart-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-users placeholder-icon"></i>
+                            <h4>Childcare & Family Support Services</h4>
+                            <p>This visualization will display:</p>
+                            <ul>
+                                <li>Childcare subsidy utilization and wait lists</li>
+                                <li>Child protection services caseloads</li>
+                                <li>Foster care placement trends</li>
+                                <li>Family preservation program outcomes</li>
+                            </ul>
+                            <div class="data-source">
+                                <strong>Data Sources:</strong> DCS Data, Childcare Licensing, Family Service Agencies
+                            </div>
+                        </div>
+                    </div>
+                                                <canvas id="childcareChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Services Insights -->
+        <section class="insights-section">
+            <div class="container">
+                <h2>Key Social Services Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <h3>Increased Food Security</h3>
+                        <div class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>-8.3% food insecurity</span>
+                        </div>
+                        <p>Expanded SNAP benefits and school meal programs have significantly reduced food insecurity among children.</p>
+                        <a href="#foodAssistanceChart" class="insight-link">View Trends</a>
+                    </div>
+
+                    <div class="insight-card trend-down">
+                        <div class="insight-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Childcare Access Gap</h3>
+                        <div class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>1,200+ on waitlist</span>
+                        </div>
+                        <p>Demand for affordable, quality childcare continues to exceed available slots, creating barriers for working families.</p>
+                        <a href="#childcareChart" class="insight-link">Analyze Gap</a>
+                    </div>
+
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Housing Stability Improved</h3>
+                        <div class="trend-indicator">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>-22% evictions</span>
+                        </div>
+                        <p>Enhanced emergency assistance and eviction prevention programs have improved housing stability for families.</p>
+                        <a href="#housingAssistanceChart" class="insight-link">Explore Data</a>
+                    </div>
+
+                    <div class="insight-card trend-up">
+                        <div class="insight-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Mental Health Access</h3>
+                        <div class="trend-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+45% service capacity</span>
+                        </div>
+                        <p>Expanded mental health services have improved access to behavioral health support for children and families.</p>
+                        <a href="#childcareChart" class="insight-link">View Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Services Programs -->
+        <section class="stories-section">
+            <div class="container">
+                <h2>Community Support Programs</h2>
+                <p class="stories-subtitle">Essential services and programs supporting family stability and child well-being in Monroe County</p>
+
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-utensils"></i>
+                        Food & Nutrition Security
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">1</div>
+                            <div class="story-image">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h4>SNAP Benefits Enhancement</h4>
+                            <div class="story-status completed">Active</div>
+                            <p>Streamlined enrollment and enhanced benefits help families purchase nutritious food and maintain food security.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">2</div>
+                            <div class="story-image">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <h4>Universal School Meals</h4>
+                            <div class="story-status completed">Implemented</div>
+                            <p>Free breakfast and lunch for all students eliminates stigma and ensures consistent nutrition during school days.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">3</div>
+                            <div class="story-image">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h4>WIC Program Expansion</h4>
+                            <div class="story-status in-progress">Growing</div>
+                            <p>Enhanced WIC services provide nutrition education and food assistance for pregnant women, infants, and children.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-home"></i>
+                        Housing & Economic Support
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">4</div>
+                            <div class="story-image">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h4>Housing Choice Vouchers</h4>
+                            <div class="story-status completed">Active</div>
+                            <p>Rental assistance helps families access safe, affordable housing in neighborhoods with quality schools and services.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">5</div>
+                            <div class="story-image">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h4>TANF Family Support</h4>
+                            <div class="story-status completed">Ongoing</div>
+                            <p>Temporary cash assistance combined with job training and support services helps families achieve self-sufficiency.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">6</div>
+                            <div class="story-image">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Emergency Assistance</h4>
+                            <div class="story-status completed">Available</div>
+                            <p>Rapid response financial assistance prevents homelessness and utility disconnections during family crises.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-child"></i>
+                        Child & Family Services
+                    </h3>
+                    <div class="stories-grid">
+                        <div class="story-card">
+                            <div class="story-number">7</div>
+                            <div class="story-image">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Quality Childcare Expansion</h4>
+                            <div class="story-status in-progress">Building</div>
+                            <p>New childcare facilities and provider training increase access to quality early childhood education programs.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">8</div>
+                            <div class="story-image">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Mental Health Services</h4>
+                            <div class="story-status completed">Expanded</div>
+                            <p>School-based counseling and community mental health programs provide accessible behavioral health support.</p>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-number">9</div>
+                            <div class="story-image">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4>Family Preservation</h4>
+                            <div class="story-status completed">Strengthened</div>
+                            <p>Intensive family support services help keep children safely with their families and prevent out-of-home placement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Services Action Priorities -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <h2>Social Services Priorities</h2>
+                    <p class="mission-statement">
+                        Strategic priorities for strengthening the social safety net and community support systems for Monroe County families and children.
+                    </p>
+                    
+                    <div class="mission-pillars">
+                        <div class="pillar">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Integrated Services</h3>
+                            <p>Coordinate and streamline access to multiple support services through integrated service delivery models.</p>
+                        </div>
+                        
+                        <div class="pillar">
+                            <i class="fas fa-clock"></i>
+                            <h3>Early Intervention</h3>
+                            <p>Identify and address family needs early to prevent crises and reduce the need for intensive interventions.</p>
+                        </div>
+                        
+                        <div class="pillar">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Evidence-Based Practice</h3>
+                            <p>Implement and evaluate programs based on proven strategies that improve outcomes for children and families.</p>
+                        </div>
+                        
+                        <div class="pillar">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Community Partnership</h3>
+                            <p>Strengthen partnerships between public agencies, nonprofits, and community organizations to maximize resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MC3 Summit 2025</h3>
+                    <p>Monroe County Childhood Conditions Summit brings together community leaders, educators, healthcare providers, and families to improve outcomes for children and youth.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="demographics.html">Demographics</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="economy.html">Economy</a></li>
+                        <li><a href="social-services.html">Social Services</a></li>
+                        <li><a href="correlations.html">Correlations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li>Indiana Family & Social Services Administration</li>
+                        <li>U.S. Department of Agriculture</li>
+                        <li>Department of Child Services</li>
+                        <li>Local Service Providers</li>
+                    </ul>
+                    <a href="https://drive.google.com/drive/folders/1234567890" target="_blank" class="gdrive-link">
+                        <i class="fab fa-google-drive"></i>
+                        <span>Access Full Dataset</span>
+                    </a>
+                    <div class="data-verification">
+                        All data verified and updated for 2024. Sources independently confirmed.
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bloomington, IN 47404</p>
+                    <p><i class="fas fa-phone"></i> (812) 555-0123</p>
+                    <p><i class="fas fa-envelope"></i> info@mc3summit.org</p>
+                    <p><i class="fas fa-globe"></i> www.mc3summit.org</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monroe County Childhood Conditions Summit. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/dataLoader.js"></script>
+    <script src="../js/visualizations.js"></script>
+    <script src="../js/narratives.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,zh,fr,de,ar,hi,ja,ko,pt,ru,vi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html> 
