@@ -59,11 +59,11 @@ This repository is organized into **5 specialized branches** for parallel develo
 
 | Branch | Focus Area | Assigned Visualizations | Team Member |
 |--------|------------|-------------------------|-------------|
-| **[demographics-stories](#-demographics-branch)** | Population & Demographics | Population trends, Age distributions, Income analysis | Developer 1 |
-| **[education-insights](#-education-branch)** | Educational Outcomes | Graduation rates, Achievement gaps, Enrollment trends | Developer 2 |
-| **[economic-analysis](#-economy-branch)** | Economic Indicators | Employment, Income, Housing costs | Developer 3 |
-| **[social-services](#-social-services-branch)** | Social Services Impact | SNAP, Childcare, Housing assistance | Developer 4 |
-| **[correlation-analysis](#-correlations-branch)** | Cross-Factor Analysis | Multi-variate correlations, Predictive insights | Developer 5 |
+| **[demographics-stories](#-demographics-branch)** | Population & Demographics | Population trends, Age distributions, Income analysis | Srihas |
+| **[education-insights](#-education-branch)** | Educational Outcomes | Graduation rates, Achievement gaps, Enrollment trends | Bhaavan |
+| **[economic-analysis](#-economy-branch)** | Economic Indicators | Employment, Income, Housing costs | Tribhangin |
+| **[social-services](#-social-services-branch)** | Social Services Impact | SNAP, Childcare, Housing assistance | Nihal |
+| **[correlation-analysis](#-correlations-branch)** | Cross-Factor Analysis | Multi-variate correlations, Predictive insights | Jashwant|
 
 ### 🔄 **Branch Workflow:**
 1. **Check out your assigned branch:** `git checkout [branch-name]`
