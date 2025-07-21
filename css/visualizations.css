@@ -1,0 +1,324 @@
+/* MC3 Summit 2025 - Professional Visualization Styles */
+
+/* Professional Chart Container */
+.visualization-container {
+    background: #ffffff;
+    border: 1px solid #e0e4e7;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Chart Canvas Optimization */
+.visualization-container canvas {
+    background: #ffffff !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 450px;
+    border-radius: 4px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Responsive Chart Heights */
+.chart-small canvas { max-height: 300px; }
+.chart-medium canvas { max-height: 400px; }
+.chart-large canvas { max-height: 500px; }
+
+/* Professional Typography */
+.visualization-container h3 {
+    color: #1f4e79;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.visualization-container .chart-subtitle {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Performance Optimized Metadata */
+.chart-metadata {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.metadata-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.metadata-row:last-child {
+    margin-bottom: 0;
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: #2d3748;
+    min-width: 120px;
+}
+
+.metadata-value {
+    color: #4a5568;
+    text-align: right;
+}
+
+/* Data Quality Indicators */
+.data-quality-high { 
+    background: #10b981; 
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.data-quality-medium { 
+    background: #f59e0b; 
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.data-quality-low { 
+    background: #ef4444; 
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Professional Export Controls */
+.chart-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.export-btn {
+    background: #1f4e79;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.export-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.export-btn:active {
+    transform: translateY(0);
+}
+
+/* Accessibility Data Tables */
+.chart-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.chart-data-table th,
+.chart-data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.chart-data-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.chart-data-table tr:hover {
+    background: #f7fafc;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .visualization-container {
+        padding: 16px;
+        margin: 16px 0;
+    }
+    
+    .visualization-container canvas {
+        max-height: 350px;
+    }
+    
+    .chart-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .export-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .metadata-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .metadata-value {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .visualization-container {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .visualization-container canvas {
+        max-height: 280px;
+    }
+    
+    .visualization-container h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Loading States */
+.chart-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background: #f8fafc;
+    border-radius: 6px;
+    color: #4a5568;
+    font-size: 1rem;
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-top: 2px solid #1f4e79;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Chart Grid Layout */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+}
+
+@media (max-width: 768px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Focus and Interaction States */
+.visualization-container:focus-within {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.export-btn:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Error States */
+.chart-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 16px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Print Styles */
+@media print {
+    .visualization-container {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .chart-controls {
+        display: none;
+    }
+    
+    .visualization-container canvas {
+        max-height: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .visualization-container {
+        border: 2px solid #000;
+    }
+    
+    .export-btn {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .export-btn {
+        transition: none;
+    }
+    
+    .loading-spinner {
+        animation: none;
+    }
+    
+    .visualization-container {
+        transform: none;
+    }
+} 

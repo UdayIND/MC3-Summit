@@ -51,6 +51,9 @@ class MC3DataApp {
             // Initialize language translation
             this.initializeLanguageFeatures();
             
+            // Initialize homepage data
+            this.initializeHomepageData();
+            
             this.markPerformance('app-init-end');
             this.isInitialized = true;
             
@@ -61,7 +64,8 @@ class MC3DataApp {
             
         } catch (error) {
             console.error('Application initialization failed:', error);
-            this.showErrorMessage('Application failed to initialize. Please refresh the page.');
+            // Don't show error message to user - just log it
+            // this.showErrorMessage('Application failed to initialize. Please refresh the page.');
         }
     }
 
@@ -590,20 +594,33 @@ Year,Value,Category
      */
     async loadControllers() {
         try {
+            console.log('Loading controllers...');
+            
             // Load visualization controller if available
             if (typeof VisualizationController !== 'undefined') {
+                console.log('VisualizationController found, initializing...');
                 this.controllers.set('visualizations', new VisualizationController());
+            } else {
+                console.warn('VisualizationController not found');
             }
             
             // Load narratives controller if available
             if (typeof NarrativesController !== 'undefined') {
+                console.log('NarrativesController found, initializing...');
                 this.controllers.set('narratives', new NarrativesController());
+            } else {
+                console.warn('NarrativesController not found');
             }
             
             // Load data loader if available
             if (typeof DataLoader !== 'undefined') {
+                console.log('DataLoader found, initializing...');
                 this.controllers.set('dataLoader', new DataLoader());
+            } else {
+                console.warn('DataLoader not found');
             }
+            
+            console.log('Controllers loaded:', Array.from(this.controllers.keys()));
             
         } catch (error) {
             console.warn('Some controllers failed to load:', error);
@@ -617,10 +634,14 @@ Year,Value,Category
         const vizController = this.controllers.get('visualizations');
         if (vizController) {
             try {
+                console.log('Initializing visualizations...');
                 vizController.initializeCharts();
+                console.log('Visualizations initialized successfully');
             } catch (error) {
                 console.warn('Visualization initialization failed:', error);
             }
+        } else {
+            console.warn('Visualization controller not found');
         }
     }
 
@@ -743,7 +764,8 @@ Year,Value,Category
     }
 
     showErrorMessage(message) {
-        this.showMessage(message, 'error');
+        // Don't show error messages to user - just log them
+        console.error(message);
     }
 
     showInfoMessage(message) {
@@ -872,6 +894,107 @@ Year,Value,Category
                 });
             }
         });
+    }
+
+    /**
+     * Initialize homepage data and statistics
+     */
+    initializeHomepageData() {
+        try {
+            // Populate the main statistics cards
+            this.populateStatistics();
+            
+            // Create navigation boxes
+            this.createNavigationBoxes();
+            
+        } catch (error) {
+            console.error('Homepage data initialization failed:', error);
+        }
+    }
+
+    /**
+     * Populate the main statistics cards with real data
+     */
+    populateStatistics() {
+        const statistics = {
+            'total-population': '139,784',
+            'poverty-rate': '19.5%',
+            'graduation-rate': '92.5%',
+            'unemployment-rate': '4.1%'
+        };
+
+        Object.entries(statistics).forEach(([id, value]) => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.textContent = value;
+                element.style.color = '#003366';
+                element.style.fontWeight = '700';
+            }
+        });
+    }
+
+    /**
+     * Create navigation boxes at the bottom of the page
+     */
+    createNavigationBoxes() {
+        const navigationData = [
+            {
+                icon: 'fas fa-users',
+                title: 'Demographics',
+                link: 'pages/demographics.html',
+                description: 'Community demographics and child development'
+            },
+            {
+                icon: 'fas fa-graduation-cap',
+                title: 'Education',
+                link: 'pages/education.html',
+                description: 'Educational excellence and outcomes'
+            },
+            {
+                icon: 'fas fa-briefcase',
+                title: 'Economy',
+                link: 'pages/economy.html',
+                description: 'Economic security and family stability'
+            },
+            {
+                icon: 'fas fa-hands-helping',
+                title: 'Social Services',
+                link: 'pages/social-services.html',
+                description: 'Child welfare and support services'
+            }
+        ];
+
+        // Create navigation section if it doesn't exist
+        let navigationSection = document.querySelector('.navigation-boxes');
+        if (!navigationSection) {
+            navigationSection = document.createElement('section');
+            navigationSection.className = 'navigation-boxes';
+            navigationSection.innerHTML = `
+                <div class="container">
+                    <h2>Explore Our Data Stories</h2>
+                    <div class="navigation-grid"></div>
+                </div>
+            `;
+            
+            // Insert before footer
+            const footer = document.querySelector('.main-footer');
+            if (footer) {
+                footer.parentNode.insertBefore(navigationSection, footer);
+            }
+        }
+
+        const grid = navigationSection.querySelector('.navigation-grid');
+        if (grid) {
+            grid.innerHTML = navigationData.map(item => `
+                <a href="${item.link}" class="nav-box">
+                    <div class="nav-box-icon">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </a>
+            `).join('');
+        }
     }
 
     /**
