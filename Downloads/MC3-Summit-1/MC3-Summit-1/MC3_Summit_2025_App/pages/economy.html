@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economy - MC3 Summit 2025</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visualizations.css">
+    
+    <!-- Chart.js for data visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Summit Logo -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <!-- Main Summit Logo -->
+                    <div class="summit-logo">
+                        <img src="../Logo/summit_logo.png" alt="Monroe County Childhood Conditions Summit" class="main-logo">
+                        <div class="summit-text">
+                            <h1>Monroe County Childhood Conditions Summit</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Partnership Logos -->
+                    <div class="partnership-logos">
+                        <img src="../Logo/patnership logos -BTCC YSB.png" alt="Partnership: Youth Services Bureau and Building a Thriving Compassionate Community" class="partnership-img">
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="demographics.html">Demographics</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="economy.html" class="active">Economy</a></li>
+                        <li><a href="social-services.html">Social Services</a></li>
+                        <li><a href="correlations.html">Correlations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Economic Development & Employment</h2>
+                <p class="hero-subtitle">Tracking Monroe County's economic recovery, employment trends, and workforce development through comprehensive labor market analysis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Key Metrics Section -->
+        <section class="metrics-section">
+            <div class="container">
+                <div class="insights-grid">
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-line-down"></i>
+                        </div>
+                        <h3>Unemployment Rate</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#economy-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Labor Force</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#economy-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Employed Residents</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#economy-chart" class="insight-link">View Analysis</a>
+                    </div>
+                    
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h3>Pre-COVID Recovery</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#economy-chart" class="insight-link">View Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Employment Recovery Timeline Visualization -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Employment Recovery Timeline (2016-2023)</h2>
+                <p class="chart-subtitle">Analyzing Monroe County's unemployment trends with focus on COVID-19 impact and economic recovery patterns</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <div class="viz-controls">
+                            <button class="export-btn" onclick="exportChart('employmentRecoveryChart', 'employment-recovery-timeline')">
+                                <i class="fas fa-download"></i> Export Chart
+                            </button>
+                        </div>
+                        </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="employmentRecoveryChart" height="400"></canvas>
+                        <div class="chart-loading" id="economyChartLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading Monroe County employment data...</p>
+                    </div>
+                </div>
+
+                    <div class="viz-narrative">
+                        <h3>Key Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>Pre-COVID Rate:</strong>
+                                <span id="preCovidStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Peak Unemployment:</strong>
+                                <span id="peakUnemploymentStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Recovery Speed:</strong>
+                                <span id="recoverySpeedStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This area chart illustrates Monroe County's employment journey from 2016 through 2023, highlighting the dramatic 
+                            impact of COVID-19 in 2020 and the subsequent recovery. The visualization shows how the local economy, supported 
+                            by the university and diverse industries, demonstrated remarkable resilience in bouncing back from pandemic-related job losses.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data-sources">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Bureau of Labor Statistics - Local Area Unemployment Statistics</li>
+                        <li>Indiana Department of Workforce Development</li>
+                        <li>Monroe County Unemployment Estimates (2016-2023)</li>
+                        <li>U.S. Census Bureau - Employment Status Data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer matching Monroe County style -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MC3 Summit 2025</h3>
+                    <p>Hosted by: Youth Services Bureau of Monroe County & Building a Thriving Compassionate Community (BTCC)</p>
+                    <p>Official MC3 Website: <a href="https://www.btccbloomington.org/mc3" target="_blank">btccbloomington.org/mc3</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li>U.S. Census Bureau - American Community Survey</li>
+                        <li>Monroe County Health Department</li>
+                        <li>Indiana Department of Education</li>
+                        <li>Indiana Department of Child Services</li>
+                        <li>Youth Services Bureau of Monroe County</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Summit Focus Areas</h3>
+                    <ul>
+                        <li><a href="demographics.html">Community Demographics</a></li>
+                        <li><a href="education.html">Educational Excellence</a></li>
+                        <li><a href="economy.html">Economic Security</a></li>
+                        <li><a href="social-services.html">Child Welfare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Verified Research Data</h3>
+                    <p><i class="fas fa-shield-alt"></i> All data sources are verified and research-grade</p>
+                    <p class="data-verification">✓ Government-sourced data<br>✓ Academic peer review<br>✓ Regularly updated</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monroe County, Indiana | MC3 Summit Data Portal</p>
+                <p>
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Accessibility Statement</a> | 
+                    <a href="#">Terms of Use</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/dataLoader.js"></script>
+    <script src="../js/visualizations.js"></script>
+    <script src="../js/narratives.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

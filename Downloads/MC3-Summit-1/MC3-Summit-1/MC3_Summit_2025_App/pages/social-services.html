@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Services - MC3 Summit 2025</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visualizations.css">
+    
+    <!-- Chart.js for data visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Summit Logo -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <!-- Main Summit Logo -->
+                    <div class="summit-logo">
+                        <img src="../Logo/summit_logo.png" alt="Monroe County Childhood Conditions Summit" class="main-logo">
+                        <div class="summit-text">
+                            <h1>Monroe County Childhood Conditions Summit</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Partnership Logos -->
+                    <div class="partnership-logos">
+                        <img src="../Logo/patnership logos -BTCC YSB.png" alt="Partnership: Youth Services Bureau and Building a Thriving Compassionate Community" class="partnership-img">
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="demographics.html">Demographics</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="economy.html">Economy</a></li>
+                        <li><a href="social-services.html" class="active">Social Services</a></li>
+                        <li><a href="correlations.html">Correlations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Social Services & Community Support</h2>
+                <p class="hero-subtitle">Analyzing social safety net programs, food assistance trends, and community support services that strengthen Monroe County families</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Key Metrics Section -->
+        <section class="metrics-section">
+            <div class="container">
+                <div class="insights-grid">
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>SNAP Recipients</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#social-services-chart" class="insight-link">View Analysis</a>
+                    </div>
+                    
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>WIC Participants</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#social-services-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>TANF Families</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#social-services-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Children in Care</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#social-services-chart" class="insight-link">View Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Child Abuse & Neglect Rate Heatmap -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Child Abuse & Neglect Rate Heatmap: Yearly Intensity Analysis</h2>
+                <p class="chart-subtitle">Calendar heatmap showing the intensity of child abuse and neglect rates per 1,000 children under age 18 in Monroe County</p>
+
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <div class="viz-controls">
+                            <button class="export-btn" onclick="exportChart('abuseHeatmapChart', 'child-abuse-neglect-heatmap')">
+                                <i class="fas fa-download"></i> Export Chart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="abuseHeatmapChart" height="400"></canvas>
+                        <div class="chart-loading" id="abuseHeatmapLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading child protection data...</p>
+                        </div>
+                    </div>
+
+                    <div class="heatmap-legend">
+                        <h4>Rate Intensity Scale</h4>
+                        <div class="legend-scale">
+                            <div class="legend-item">
+                                <div class="color-box low-rate"></div>
+                                <span>Low (0-5 per 1,000)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="color-box moderate-rate"></div>
+                                <span>Moderate (5-10 per 1,000)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="color-box high-rate"></div>
+                                <span>High (10-15 per 1,000)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="color-box critical-rate"></div>
+                                <span>Critical (15+ per 1,000)</span>
+                            </div>
+                        </div>
+                        <div class="state-comparison">
+                            <p><strong>Indiana State Average:</strong> <span id="stateAverageRate">8.8 per 1,000</span></p>
+                            <p><strong>National Average:</strong> <span id="nationalAverageRate">7.7 per 1,000</span></p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Key Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>Peak Year:</strong>
+                                <span id="peakYearStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Trend Direction:</strong>
+                                <span id="trendDirectionStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>vs State Average:</strong>
+                                <span id="stateComparisonStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This heatmap visualization allows for quick identification of years with elevated child abuse and neglect rates in Monroe County. 
+                            Darker colors indicate higher rates, helping stakeholders identify "hot years" that require investigation into contributing factors 
+                            such as economic stress, policy changes, or resource availability. The visualization includes state and national averages for context.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data-sources">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Indiana Department of Child Services - Child Protection Reports</li>
+                        <li>Monroe County Department of Child Services - Local Case Data</li>
+                        <li>U.S. Department of Health and Human Services - National Child Abuse Statistics</li>
+                        <li>Youth Services Bureau of Monroe County - Community Assessment Data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNAP vs WIC Utilization Trends Visualization -->
+        <section class="chart-section secondary-chart">
+            <div class="container">
+                <h2>SNAP vs WIC Utilization Trends (2010-2023)</h2>
+                <p class="chart-subtitle">Supporting analysis: Food assistance program usage patterns that may correlate with family stress factors</p>
+
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <div class="viz-controls">
+                            <button class="export-btn" onclick="exportChart('foodAssistanceChart', 'snap-wic-utilization-trends')">
+                                <i class="fas fa-download"></i> Export Chart
+                            </button>
+                        </div>
+                        </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="foodAssistanceChart" height="400"></canvas>
+                        <div class="chart-loading" id="socialServicesChartLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading Monroe County social services data...</p>
+                    </div>
+                </div>
+
+                    <div class="viz-narrative">
+                        <h3>Key Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>SNAP Trend:</strong>
+                                <span id="snapTrendStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>WIC Growth:</strong>
+                                <span id="wicGrowthStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>COVID Impact:</strong>
+                                <span id="covidImpactStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This stacked area chart shows the utilization patterns of Monroe County's two major food assistance programs. 
+                            SNAP benefits serve a broader population including families and individuals, while WIC specifically targets 
+                            pregnant women, new mothers, and young children. The visualization reveals how program usage responds to 
+                            economic conditions and policy changes over time.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data-sources">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Indiana Family and Social Services Administration</li>
+                        <li>U.S. Department of Agriculture - Food and Nutrition Service</li>
+                        <li>Monroe County Health Department - WIC Program Data</li>
+                        <li>Indiana Department of Child Services</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer matching Monroe County style -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MC3 Summit 2025</h3>
+                    <p>Hosted by: Youth Services Bureau of Monroe County & Building a Thriving Compassionate Community (BTCC)</p>
+                    <p>Official MC3 Website: <a href="https://www.btccbloomington.org/mc3" target="_blank">btccbloomington.org/mc3</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li>U.S. Census Bureau - American Community Survey</li>
+                        <li>Monroe County Health Department</li>
+                        <li>Indiana Department of Education</li>
+                        <li>Indiana Department of Child Services</li>
+                        <li>Youth Services Bureau of Monroe County</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Summit Focus Areas</h3>
+                    <ul>
+                        <li><a href="demographics.html">Community Demographics</a></li>
+                        <li><a href="education.html">Educational Excellence</a></li>
+                        <li><a href="economy.html">Economic Security</a></li>
+                        <li><a href="social-services.html">Child Welfare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Verified Research Data</h3>
+                    <p><i class="fas fa-shield-alt"></i> All data sources are verified and research-grade</p>
+                    <p class="data-verification">✓ Government-sourced data<br>✓ Academic peer review<br>✓ Regularly updated</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monroe County, Indiana | MC3 Summit Data Portal</p>
+                <p>
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Accessibility Statement</a> | 
+                    <a href="#">Terms of Use</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/dataLoader.js"></script>
+    <script src="../js/visualizations.js"></script>
+    <script src="../js/narratives.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

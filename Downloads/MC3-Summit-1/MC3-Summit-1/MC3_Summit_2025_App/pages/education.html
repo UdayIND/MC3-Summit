@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - MC3 Summit 2025</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visualizations.css">
+    
+    <!-- Chart.js for data visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Summit Logo -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <!-- Main Summit Logo -->
+                    <div class="summit-logo">
+                        <img src="../Logo/summit_logo.png" alt="Monroe County Childhood Conditions Summit" class="main-logo">
+                        <div class="summit-text">
+                            <h1>Monroe County Childhood Conditions Summit</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Partnership Logos -->
+                    <div class="partnership-logos">
+                        <img src="../Logo/patnership logos -BTCC YSB.png" alt="Partnership: Youth Services Bureau and Building a Thriving Compassionate Community" class="partnership-img">
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="demographics.html">Demographics</a></li>
+                        <li><a href="education.html" class="active">Education</a></li>
+                        <li><a href="economy.html">Economy</a></li>
+                        <li><a href="social-services.html">Social Services</a></li>
+                        <li><a href="correlations.html">Correlations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Education & Academic Achievement</h2>
+                <p class="hero-subtitle">Analyzing educational outcomes, graduation rates, and the relationship between academic achievement and socioeconomic factors in Monroe County</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Key Metrics Section -->
+        <section class="metrics-section">
+            <div class="container">
+                <div class="insights-grid">
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>High School Graduation Rate</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#education-chart" class="insight-link">View Analysis</a>
+                    </div>
+                    
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Free/Reduced Lunch</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#education-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Student Suspensions</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#education-chart" class="insight-link">View Analysis</a>
+                    </div>
+
+                    <div class="insight-card trend-pending">
+                        <div class="insight-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Total Enrollment</h3>
+                        <p class="status-text">In Progress</p>
+                        <a href="#education-chart" class="insight-link">View Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monroe County Education Trends: Graduation, Dropout & Enrollment -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Monroe County Education Trends: Graduation, Dropout & Enrollment Rates</h2>
+                <p class="chart-subtitle">Area line chart tracking key education indicators for Monroe County over time using local school district data</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <div class="viz-controls">
+                            <button class="export-btn" onclick="exportChart('educationTrendsChart', 'monroe-county-education-trends')">
+                                <i class="fas fa-download"></i> Export Chart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="educationTrendsChart" height="400"></canvas>
+                        <div class="chart-loading" id="educationTrendsLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading Monroe County education trends...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Key Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>Graduation Rate:</strong>
+                                <span id="graduationRateStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Dropout Rate:</strong>
+                                <span id="dropoutRateStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Enrollment Trend:</strong>
+                                <span id="enrollmentTrendStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This area line chart shows the evolution of Monroe County's key education indicators over time. 
+                            The visualization tracks graduation rates (positive outcomes), dropout rates (areas of concern), 
+                            and overall enrollment patterns to provide a comprehensive view of educational progress and challenges 
+                            in our local school districts.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data-sources">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Monroe County Schools - High School Graduation Rate Data</li>
+                        <li>Monroe County Schools - Dropout Rate Reports</li>
+                        <li>Monroe County Schools - Student Enrollment Records</li>
+                        <li>Indiana Department of Education - Local District Performance Data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MC3 Summit 2025</h3>
+                    <p>Hosted by: Youth Services Bureau of Monroe County & Building a Thriving Compassionate Community (BTCC)</p>
+                    <p>Official MC3 Website: <a href="https://www.btccbloomington.org/mc3" target="_blank">btccbloomington.org/mc3</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data Sources</h3>
+                    <ul>
+                        <li>U.S. Census Bureau - American Community Survey</li>
+                        <li>Monroe County Health Department</li>
+                        <li>Indiana Department of Education</li>
+                        <li>Indiana Department of Child Services</li>
+                        <li>Youth Services Bureau of Monroe County</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Summit Focus Areas</h3>
+                    <ul>
+                        <li><a href="demographics.html">Community Demographics</a></li>
+                        <li><a href="education.html">Educational Excellence</a></li>
+                        <li><a href="economy.html">Economic Security</a></li>
+                        <li><a href="social-services.html">Child Welfare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Verified Research Data</h3>
+                    <p><i class="fas fa-shield-alt"></i> All data sources are verified and research-grade</p>
+                    <p class="data-verification">✓ Government-sourced data<br>✓ Academic peer review<br>✓ Regularly updated</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monroe County, Indiana | MC3 Summit Data Portal</p>
+                <p>
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Accessibility Statement</a> | 
+                    <a href="#">Terms of Use</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/dataLoader.js"></script>
+    <script src="../js/visualizations.js"></script>
+    <script src="../js/narratives.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 
