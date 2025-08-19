@@ -68,10 +68,7 @@ class MC3Visualizations {
             await this.createEducationTrendsChart();
         }
         
-        // Education page - College Readiness Scorecard
-        if (document.getElementById('collegeReadinessChart')) {
-            await this.createCollegeReadinessChart();
-        }
+
         
         // Education page - Academic Pathway Success Rates
         if (document.getElementById('pathwaySuccessChart')) {
@@ -1822,96 +1819,7 @@ class MC3Visualizations {
         }
     }
 
-    /**
-     * Create College Readiness Scorecard (Doughnut Chart)
-     * Shows overall college readiness distribution for Monroe County 2021 cohort
-     */
-    async createCollegeReadinessChart() {
-        const canvas = document.getElementById('collegeReadinessChart');
-        const loading = document.getElementById('collegeReadinessLoading');
-        
-        if (!canvas) return;
 
-        try {
-            if (loading) loading.style.display = 'flex';
-
-            // Sample data based on Monroe County College Readiness Dataset 2021 Cohort
-            const readinessData = {
-                labels: ['College Ready', 'Approaching Ready', 'Needs Support'],
-                data: [68, 22, 10], // Percentages
-                colors: ['#28a745', '#ffc107', '#dc3545'],
-                metrics: {
-                    collegeEnrollment: 72,
-                    testBenchmark: 65,
-                    coreCompletion: 89
-                }
-            };
-
-            const chart = new Chart(canvas, {
-                type: 'doughnut',
-                data: {
-                    labels: readinessData.labels,
-                    datasets: [{
-                        data: readinessData.data,
-                        backgroundColor: readinessData.colors,
-                        borderColor: '#fff',
-                        borderWidth: 3,
-                        hoverOffset: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Monroe County College Readiness Distribution (2021 Cohort)',
-                            font: { size: 16, weight: 'bold' },
-                            color: this.colors.primary,
-                            padding: 20
-                        },
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                usePointStyle: true,
-                                font: { size: 12 }
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                            titleColor: '#fff',
-                            bodyColor: '#fff',
-                            callbacks: {
-                                label: (context) => {
-                                    const percentage = context.parsed;
-                                    const label = context.label;
-                                    return `${label}: ${percentage}% of graduates`;
-                                },
-                                afterBody: () => 'Source: 2023 College Readiness Dataset'
-                            }
-                        }
-                    },
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutQuart'
-                    }
-                }
-            });
-
-            this.charts.set('collegeReadinessChart', chart);
-            this.updateCollegeReadinessInsights(readinessData);
-
-            if (loading) loading.style.display = 'none';
-            console.log('✅ College Readiness Scorecard created successfully');
-
-        } catch (error) {
-            console.error('❌ Failed to create College Readiness Chart:', error);
-            if (loading) {
-                loading.innerHTML = '<p style="color: var(--danger);">Error loading college readiness data</p>';
-            }
-        }
-    }
 
     /**
      * Create Academic Pathway Success Rates (Horizontal Bar Chart)
@@ -2427,22 +2335,7 @@ class MC3Visualizations {
     }
 
     // Insight update functions for all college readiness charts
-    updateCollegeReadinessInsights(data) {
-        try {
-            const updates = {
-                'collegeEnrollmentStat': `${data.metrics.collegeEnrollment}%`,
-                'testBenchmarkStat': `${data.metrics.testBenchmark}% meet benchmarks`,
-                'coreCourseStat': `${data.metrics.coreCompletion}% completed`
-            };
 
-            Object.entries(updates).forEach(([id, value]) => {
-                const element = document.getElementById(id);
-                if (element) element.textContent = value;
-            });
-        } catch (error) {
-            console.error('Error updating college readiness insights:', error);
-        }
-    }
 
     updatePathwaySuccessInsights(data) {
         try {
