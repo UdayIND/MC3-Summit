@@ -1565,53 +1565,57 @@ class MC3Visualizations {
                 enrollmentRate: [94.5, 94.8, 95.1, 94.9, 95.3, 95.6, 95.8, 95.4, 95.9, 96.2, 93.8, 95.5, 96.1, 96.3]
             };
             
-            // Create the area line chart
+            // Create dual Y-axis line chart (no misleading area fills)
             const chart = new Chart(canvas.getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: educationTrendsData.years,
-            datasets: [
-                {
+                    datasets: [
+                        {
                             label: 'Graduation Rate (%)',
                             data: educationTrendsData.graduationRate,
-                            backgroundColor: this.createGradient(canvas.getContext('2d'), this.colors.success),
                             borderColor: this.colors.success,
+                            backgroundColor: this.colors.success,
                             borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                            pointRadius: 5,
-                            pointHoverRadius: 8,
+                            fill: false, // Remove misleading area fill
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointHoverRadius: 9,
                             pointBackgroundColor: this.colors.success,
                             pointBorderColor: '#ffffff',
-                            pointBorderWidth: 2
+                            pointBorderWidth: 2,
+                            yAxisID: 'y' // Left Y-axis
                         },
                         {
                             label: 'Enrollment Rate (%)',
                             data: educationTrendsData.enrollmentRate,
-                            backgroundColor: this.createGradient(canvas.getContext('2d'), this.colors.primary),
                             borderColor: this.colors.primary,
+                            backgroundColor: this.colors.primary,
                             borderWidth: 3,
-                            fill: true,
-                    tension: 0.4,
-                            pointRadius: 5,
-                            pointHoverRadius: 8,
+                            fill: false, // Remove misleading area fill
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointHoverRadius: 9,
                             pointBackgroundColor: this.colors.primary,
                             pointBorderColor: '#ffffff',
-                            pointBorderWidth: 2
+                            pointBorderWidth: 2,
+                            yAxisID: 'y' // Left Y-axis
                         },
                         {
-                            label: 'Dropout Rate (%)',
+                            label: 'Dropout Rate (%) - Right Axis',
                             data: educationTrendsData.dropoutRate,
-                            backgroundColor: this.createGradient(canvas.getContext('2d'), this.colors.danger),
                             borderColor: this.colors.danger,
+                            backgroundColor: this.colors.danger,
                             borderWidth: 3,
-                            fill: true,
-                    tension: 0.4,
-                            pointRadius: 5,
-                            pointHoverRadius: 8,
+                            fill: false, // Remove misleading area fill
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointHoverRadius: 9,
                             pointBackgroundColor: this.colors.danger,
                             pointBorderColor: '#ffffff',
-                            pointBorderWidth: 2
+                            pointBorderWidth: 2,
+                            borderDash: [5, 5], // Dashed line to distinguish from left axis
+                            yAxisID: 'y1' // Right Y-axis
                         }
                     ]
                 },
@@ -1625,13 +1629,13 @@ class MC3Visualizations {
             plugins: {
                 title: {
                     display: true,
-                            text: 'Monroe County Education Trends Over Time',
+                    text: 'Monroe County Education Trends Over Time (Dual Y-Axis)',
                     font: {
                         size: 16,
                         weight: 'bold'
                     },
-                            color: this.colors.primary,
-                            padding: 20
+                    color: this.colors.primary,
+                    padding: 20
                 },
                 legend: {
                     display: true,
@@ -1653,9 +1657,23 @@ class MC3Visualizations {
                             callbacks: {
                                 title: (context) => `Academic Year: ${context[0].label}`,
                                 label: (context) => {
-                                    return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`;
+                                    const value = context.parsed.y.toFixed(1);
+                                    const label = context.dataset.label;
+                                    if (label.includes('Dropout')) {
+                                        return `${label}: ${value}% (Right Axis)`;
+                                    } else {
+                                        return `${label}: ${value}% (Left Axis)`;
+                                    }
                                 },
-                                afterBody: () => 'Source: Monroe County Schools'
+                                afterBody: (context) => {
+                                    return [
+                                        'Source: Monroe County Schools',
+                                        '',
+                                        'Note: Dual Y-axis chart for better trend visibility',
+                                        '• Left axis: Graduation & Enrollment (85-100%)',
+                                        '• Right axis: Dropout rates (0-5%)'
+                                    ];
+                                }
                             }
                 }
             },
@@ -1682,13 +1700,16 @@ class MC3Visualizations {
                             }
                         },
                         y: {
-                title: {
-                    display: true,
-                                text: 'Percentage (%)',
-                    font: {
-                        size: 14,
-                        weight: 'bold'
-                    },
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Graduation & Enrollment Rates (%)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
                                 color: this.colors.primary
                             },
                             grid: {
@@ -1697,16 +1718,45 @@ class MC3Visualizations {
                             },
                             ticks: {
                                 color: this.colors.gray,
-                        font: {
+                                font: {
                                     size: 12
                                 },
                                 callback: function(value) {
                                     return value.toFixed(1) + '%';
+                                }
+                            },
+                            min: 85, // Focused scale for graduation/enrollment
+                            max: 100
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Dropout Rate (%)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                color: this.colors.danger
+                            },
+                            grid: {
+                                drawOnChartArea: false, // Don't draw grid lines for right axis
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: this.colors.danger,
+                                font: {
+                                    size: 12
+                                },
+                                callback: function(value) {
+                                    return value.toFixed(1) + '%';
+                                }
+                            },
+                            min: 0, // Focused scale for dropout rates
+                            max: 5
                         }
-                    },
-                    min: 0,
-                    max: 100
-                }
                     },
                     animation: {
                         duration: 1500,
