@@ -168,6 +168,257 @@
             </div>
         </section>
 
+        <!-- College Readiness Scorecard -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Monroe County College Readiness Scorecard (2021 Cohort)</h2>
+                <p class="chart-subtitle">Comprehensive overview of college readiness metrics for Monroe County high school graduates</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <button class="export-btn" onclick="exportChart('collegeReadinessChart', 'college-readiness-scorecard')">
+                            <i class="fas fa-download"></i> Export Chart
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="collegeReadinessChart" height="400"></canvas>
+                        <div class="chart-loading" id="collegeReadinessLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading college readiness data...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>College Readiness Overview</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>College Enrollment Rate:</strong>
+                                <span id="collegeEnrollmentStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>SAT/ACT Benchmark:</strong>
+                                <span id="testBenchmarkStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Core Course Completion:</strong>
+                                <span id="coreCourseStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This scorecard provides a comprehensive view of college readiness among Monroe County's 2021 graduating cohort. 
+                            The visualization combines multiple indicators including standardized test performance, college enrollment rates, 
+                            and academic preparation to assess how well our students are prepared for post-secondary success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Pathway Success Rates -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Academic Pathway Success Rates</h2>
+                <p class="chart-subtitle">Success rates across different educational pathways for Monroe County students</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <button class="export-btn" onclick="exportChart('pathwaySuccessChart', 'academic-pathway-success')">
+                            <i class="fas fa-download"></i> Export Chart
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="pathwaySuccessChart" height="400"></canvas>
+                        <div class="chart-loading" id="pathwaySuccessLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading pathway success data...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Pathway Performance</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>AP Pathway Success:</strong>
+                                <span id="apPathwayStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Dual Credit Success:</strong>
+                                <span id="dualCreditStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>CTE Pathway Success:</strong>
+                                <span id="ctePathwayStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            Monroe County offers multiple pathways to post-secondary success. This analysis shows success rates across 
+                            traditional academic tracks, Advanced Placement programs, dual credit opportunities, and career-technical education. 
+                            All pathways are valued equally as valid routes to student success and career readiness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post-Secondary Enrollment Flow -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Post-Secondary Enrollment Flow</h2>
+                <p class="chart-subtitle">Student pathways from high school graduation to post-secondary enrollment</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <button class="export-btn" onclick="exportChart('enrollmentFlowChart', 'enrollment-flow-analysis')">
+                            <i class="fas fa-download"></i> Export Chart
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="enrollmentFlowChart" height="400"></canvas>
+                        <div class="chart-loading" id="enrollmentFlowLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading enrollment flow data...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Enrollment Patterns</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>4-Year College:</strong>
+                                <span id="fourYearCollegeStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>2-Year College:</strong>
+                                <span id="twoYearCollegeStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Career/Technical:</strong>
+                                <span id="careerTechStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This flow visualization tracks Monroe County graduates' transitions to various post-secondary options. 
+                            The analysis shows the distribution of students across 4-year universities, community colleges, 
+                            career training programs, and workforce entry, highlighting the diverse pathways our students pursue.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- College Readiness Equity Analysis -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>College Readiness Equity Analysis</h2>
+                <p class="chart-subtitle">Examining equity in college readiness opportunities across student demographics</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <button class="export-btn" onclick="exportChart('equityAnalysisChart', 'college-readiness-equity')">
+                            <i class="fas fa-download"></i> Export Chart
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="equityAnalysisChart" height="400"></canvas>
+                        <div class="chart-loading" id="equityAnalysisLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading equity analysis data...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Equity Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>Opportunity Gap:</strong>
+                                <span id="opportunityGapStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Support Programs:</strong>
+                                <span id="supportProgramStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Improvement Areas:</strong>
+                                <span id="improvementAreaStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            This equity analysis examines college readiness opportunities across different student demographics in Monroe County. 
+                            The focus is on identifying opportunity gaps and highlighting successful support programs that help ensure 
+                            all students have access to college and career preparation resources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monroe County vs State Benchmarks -->
+        <section class="chart-section">
+            <div class="container">
+                <h2>Monroe County vs State Benchmarks</h2>
+                <p class="chart-subtitle">Comparing Monroe County college readiness metrics to Indiana state averages and national standards</p>
+                
+                <div class="viz-container">
+                    <div class="viz-header">
+                        <button class="export-btn" onclick="exportChart('benchmarkChart', 'state-benchmark-comparison')">
+                            <i class="fas fa-download"></i> Export Chart
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="benchmarkChart" height="400"></canvas>
+                        <div class="chart-loading" id="benchmarkLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading benchmark comparison data...</p>
+                        </div>
+                    </div>
+
+                    <div class="viz-narrative">
+                        <h3>Performance Comparison</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <strong>vs Indiana Average:</strong>
+                                <span id="stateComparisonStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>vs National Average:</strong>
+                                <span id="nationalComparisonStat">Loading...</span>
+                            </div>
+                            <div class="insight-item">
+                                <strong>Trend Direction:</strong>
+                                <span id="trendDirectionStat">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <p class="narrative-text">
+                            Monroe County's college readiness performance is benchmarked against Indiana state averages and national standards. 
+                            This comparison provides context for our local achievements and identifies areas where continued investment 
+                            and improvement efforts can enhance student outcomes and college readiness.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data-sources">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>2023 College Readiness Dataset - 2021 Cohort (Monroe County)</li>
+                        <li>Indiana Department of Education - College and Career Readiness</li>
+                        <li>College Board - SAT Performance Data</li>
+                        <li>ACT Inc. - College Readiness Benchmarks</li>
+                        <li>National Student Clearinghouse - Enrollment Data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
